@@ -1,0 +1,38 @@
+<%- include('./index.ejs') %>
+    <style>
+        .cont {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            gap: 2em;
+        }
+        
+        .item {
+            padding: 10px;
+        }
+        
+        .btn {
+            padding: 5px;
+            border: 1px solid rgb(211, 208, 208)
+        }
+    </style>
+    <form name="editDet" id="editDet" class="form" action="/class/class/update" method="post">
+        <div class="cont">
+            <input type="hidden" name="id" value="<%= student[0].id %>" />
+            <div class="item"> <label for="student_name">Student Name</label>
+                <input class="item" name="student_nm" type="text" value="<%= student[0].stud_name %>" placeholder="<%= student[0].stud_name%>" />
+            </div>
+
+            <div class="item">
+                <label for="teacher">Teacher</label>
+                <input class="item" name="teacher_nm" type="text" value="<%= student[0].teacher %>" placeholder="<%= student[0].teacher%>" />
+
+            </div>
+        </div>
+        <div class="button">
+            <input class="btn" type="submit" value="Submit" />
+        </div>
+
+
+    </form>

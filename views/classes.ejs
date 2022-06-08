@@ -1,0 +1,58 @@
+<%- include('./index.ejs') %>
+    <style>
+        table {
+            width: 100%
+        }
+        
+        th,
+        td {
+            padding: 10px;
+        }
+        
+        .count {
+            padding: 10px;
+        }
+    </style>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Teacher Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length){
+
+for(var i = 0; i< data.length; i++) {%>
+                <tr>
+                    <td>
+                        <b><%= data[i].id %></b>
+                    </td>
+
+                    <td>
+                        <%= data[i].stud_name %>
+                    </td>
+                    <td>
+                        <%= data[i].teacher %>
+                    </td>
+
+                    <td>
+                        <a class="btn btn-success edit" href="/class/class/edit/<%=data[i].id%>">Edit</a>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <% }
+         
+ }else{ %>
+                    <tr>
+                        <td colspan="3">No Data</td>
+                    </tr>
+                    <% } %>
+
+        </tbody>
+
+    </table>
+    <a class="nav-link" href="/count/count">ID Count</a>

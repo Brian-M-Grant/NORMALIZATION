@@ -1,0 +1,61 @@
+<style>
+    .side-cont {
+        width: 250px;
+        border-right: 1px solid rgb(216, 213, 213)
+    }
+    
+    .side-list {
+        display: flex;
+        flex-direction: column;
+        line-height: 3em;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    li {
+        list-style: none;
+        padding: 1em;
+        border-bottom: 1px solid rgb(216, 213, 213)
+    }
+    
+    .big-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20em;
+    }
+    
+    .log {
+        color: rgb(93, 141, 21)
+    }
+    
+    .logout {
+        color: red;
+    }
+</style>
+<div class="big-container">
+    <div class="side-cont">
+        <div class="side-list">
+            <div class="item">
+                <li><a class="item" href="/class/class">Student DBMS</a></li>
+                <li><a class="item" href="/teacher/teacher">Teacher DBMS</a></li>
+                <li><a class="item" href="/teacher/teacher">Reset DBMS</a></li>
+                <li><a class="item" href="/teacher/teacher">Add New DBMS</a></li>
+                <li><a class="item" href="/teacher/teacher">Auxiliary DBMS</a></li>
+                <li><a class="item" href="/teacher/teacher">Contact Administer</a></li>
+                <li class="log">
+                    <%= data[0].username %> is logged in
+                </li>
+                <li><a class="logout" href="/login/logout">Logout</a></li>
+            </div>
+        </div>
+
+    </div>
+    <div class="user">
+        <h1>Welcome Back
+            <%= data[0].username %>!!
+        </h1>
+    </div>
+
+</div>

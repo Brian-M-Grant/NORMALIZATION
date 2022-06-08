@@ -1,0 +1,47 @@
+<style>
+    table {
+        width: 100%
+    }
+    
+    th,
+    td {
+        padding: 10px;
+    }
+    
+    .big-cont {
+        display: flex;
+        flex-direction: row;
+    }
+</style>
+<%- include('./index.ejs') %>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Teacher Name</th>
+                <th>Subject</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length){
+    
+    for(var i = 0; i< data.length; i++) {%>
+                <tr>
+                    <td>
+                        <%= data[i].teacher_name %>
+                    </td>
+                    <td>
+                        <%= data[i].subject_nm%>
+                    </td>
+                </tr>
+                <% }
+             
+     }else{ %>
+                    <tr>
+                        <td colspan="3">No Data</td>
+                    </tr>
+                    <% } %>
+
+        </tbody>
+    </table>
